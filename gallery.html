@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px;
+        }
+        .gallery img {
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+            border-color: #000;
+        }
+        .fullscreen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .fullscreen img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .fullscreen .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="./Assets/an-225.jpg" alt="Image 1">
+        <img src="./Assets/imahes/concorde.jpg" alt="Image 1.5">
+        <img src="./Assets/imahes/IMG_1309.jpg" alt="Image 2">
+        <img src="./Assets/imahes/IMG_1514.jpg" alt="Image 3">
+        <img src="./Assets/imahes/IMG_1557.jpg" alt="Image 4">
+        <img src="./Assets/imahes/IMG_1599.jpg" alt="Image 5">
+        <img src="./Assets/imahes/IMG_1915.jpg" alt="Image 6">
+        <img src="./Assets/imahes/IMG_3054.jpg" alt="Image 7">
+        <img src="./Assets/imahes/IMG_4079.jpg" alt="Image 8">
+        <img src="./Assets/imahes/IMG_4721.jpg" alt="Image 9">
+        <img src="./Assets/imahes/IMG_7232.jpg" alt="Image 10">
+        <img src="./Assets/imahes/IMG_7484.jpg" alt="Image 11">
+        <img src="./Assets/imahes/IMG_7485.jpg" alt="Image 12">
+    </div>
+
+    <div class="fullscreen" id="fullscreen">
+        <span class="close" id="close">&times;</span>
+        <img id="fullscreenImage" src="" alt="Fullscreen Image">
+    </div>
+
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery img');
+        const fullscreen = document.getElementById('fullscreen');
+        const fullscreenImage = document.getElementById('fullscreenImage');
+        const closeBtn = document.getElementById('close');
+
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                fullscreenImage.src = image.src;
+                fullscreen.style.display = 'flex';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            fullscreen.style.display = 'none';
+        });
+
+        fullscreen.addEventListener('click', (e) => {
+            if (e.target === fullscreen) {
+                fullscreen.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

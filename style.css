@@ -1,0 +1,104 @@
+/* style.css */
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* A nice blue */
+    margin-bottom: 30px;
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 20px;
+    height: 1500px;
+}
+
+.rotate {
+    display: inline-block;
+}
+
+.rotate button {
+    background-color: #28a745; /* A green button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transform: rotate(-40deg);
+    transition: transform 0.3s ease-in-out; /* Smooth rotation */
+}
+
+.rotate button:hover {
+    transform: rotate(50deg);
+    background-color: #218838; /* Darker green on hover */
+}
+
+pre {
+    background-color: #e9ecef; /* Light gray background */
+    padding: 15px;
+    border-radius: 5px;
+    white-space: pre-wrap; /* Preserve line breaks and wrap text */
+}
+
+p {
+    font-style: italic;
+    color: #6c757d; /* A softer gray */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+hr {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+h2 {
+    color: #dc3545; /* A red color */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+a[href^="mailto:"] {
+    color: #17a2b8; /* A cyan color for the email link */
+    text-decoration: none;
+}
+
+a[href^="mailto:"]:hover {
+    text-decoration: underline;
+}
+
+h3 {
+    color: #ffc107; /* A yellow color */
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.make-space{
+    height: 1200px;
+}
+
+.secret-button {
+ 
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border: none;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .secret-button:hover {
+    opacity: 0.1;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+/* You can add more styles here as you like! */
